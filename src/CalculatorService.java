@@ -1,7 +1,7 @@
 public class CalculatorService {
     private double num1;
     private double num2;
-    char operator;
+    private char operator;
 
     public void setNum1(double num1) {
         this.num1 = num1;

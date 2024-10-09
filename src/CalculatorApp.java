@@ -116,12 +116,18 @@ public class CalculatorApp extends JFrame implements ActionListener{
             equalsPressed = false;
         }
         else if (command.equals(".")) {
-            if (!output.getText().contains(".")) {
-                output.setText(output.getText() + ".");
-            }
+            if (!equalsPressed) {
+                if (!output.getText().contains(".")) {
+                    output.setText(output.getText() + ".");
+                }
+                operatorPressed = false;
 
-            operatorPressed = false;
-            equalsPressed = false;
+            } else {
+                output.setText("0.");
+
+                operatorPressed = false;
+                equalsPressed = false;
+            }
         }
         else if (command.equals("=")) {
             if (operatorPressed) {
